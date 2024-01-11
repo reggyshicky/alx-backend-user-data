@@ -4,9 +4,6 @@ A module used for obfusaction of user data
 """
 from typing import List
 import re
-import logging
-import os
-import mysql.connector
 
 
 def filter_datum(fields: List[str], redaction: str,
