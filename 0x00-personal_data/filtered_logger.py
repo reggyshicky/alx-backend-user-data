@@ -7,7 +7,7 @@ import re
 
 
 def filter_datum(fields: List[str], redaction: str,
-                 message: str, seperator: str) -> str:
+                 message: str, separator: str) -> str:
     """
     Returns an obfuscated log message
     """
