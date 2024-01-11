@@ -5,9 +5,6 @@ log message
 """
 from typing import List
 import re
-import logging
-import os
-import mysql.connector
 
 
 def filter_datum(fields: List[str], redaction: str,
@@ -17,7 +14,3 @@ def filter_datum(fields: List[str], redaction: str,
         message = re.sub(field+'=.*?'+seperator,
                          field+'='+redaction+seperator, message)
     return message
-
-
-if __name__ == "__main__":
-    main()
