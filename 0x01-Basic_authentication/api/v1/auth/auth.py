@@ -9,7 +9,12 @@ class Auth():
 
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """returns True if the path is not in excluded_paths"""
-        return False
+        if path is not None and excluded_paths is not None:
+            if path[-1] != "/":
+                path = path + "/"
+            if path in excluded_paths:
+                return False
+        return True
 
     def authorization_header(self, request=None) -> str:
         """validates all requests to secure the API"""
