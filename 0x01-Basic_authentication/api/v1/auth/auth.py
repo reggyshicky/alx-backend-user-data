@@ -18,6 +18,10 @@ class Auth():
 
     def authorization_header(self, request=None) -> str:
         """validates all requests to secure the API"""
+        if request is not None:
+            dict_key = request.headers.get('Authorization')
+            if dict_key is not None:
+                return dict_key
         return None
 
     def current_user(self, requst=None) -> TypeVar('User'):
