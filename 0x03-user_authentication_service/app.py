@@ -62,7 +62,7 @@ def profile() -> str:
 
 
 @app.route("/reset_password", methods=["POST"], strict_slashes=False)
-def get_reset_password_toke() -> str:
+def get_reset_password_token() -> str:
     """Reset password"""
     email = request.form.get("email")
     reset_token = None
@@ -73,7 +73,7 @@ def get_reset_password_toke() -> str:
 
     if reset_token is None:
         abort(403)
-    return jsonify({"email": email, "reset_token": reset_token})
+    return jsonify({"email": email, "reset_token": reset_token}), 200
 
 
 @app.route("/reset_password", methods=["PUT"], strict_slashes=False)
