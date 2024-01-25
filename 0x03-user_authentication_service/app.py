@@ -51,7 +51,7 @@ def logout() -> str:
     return redirect("/")
 
 
-@app.route("/profile", methos=["GET"], strict_slashes=False)
+@app.route("/profile", methods=["GET"], strict_slashes=False)
 def profile() -> str:
     """GET /profile, returns user's profile information"""
     session_id = request.cookies.get("session_id")
